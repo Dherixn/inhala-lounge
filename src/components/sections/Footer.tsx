@@ -99,15 +99,30 @@ export default function Footer() {
 
         {/* Social links */}
         <div className="flex items-center justify-center gap-8 mt-16">
-          {["Instagram", "Twitter", "LinkedIn"].map((social) => (
-            <a
-              key={social}
-              href="#"
-              className="text-xs tracking-[0.2em] uppercase text-white/25 hover:text-[#ffffff] transition-colors duration-300 font-light"
-            >
-              {social}
-            </a>
-          ))}
+          <a
+            href="https://www.instagram.com/inhala501aguadulce/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs tracking-[0.2em] uppercase text-white/25 hover:text-[#ffffff] transition-colors duration-300 font-light"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://www.facebook.com/ishishacatering/?locale=es_ES"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs tracking-[0.2em] uppercase text-white/25 hover:text-[#ffffff] transition-colors duration-300 font-light"
+          >
+            Facebook
+          </a>
+          <a
+            href="https://wa.me/34601000891"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs tracking-[0.2em] uppercase text-white/25 hover:text-[#ffffff] transition-colors duration-300 font-light"
+          >
+            WhatsApp
+          </a>
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/[0.04]">
