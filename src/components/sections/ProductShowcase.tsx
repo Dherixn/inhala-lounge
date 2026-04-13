@@ -142,8 +142,11 @@ export default function ProductShowcase() {
               y: 5, scale: 1.1, duration: 2, yoyo: true, repeat: -1, ease: "sine.inOut"
             });
           } else if (artId === "detalles") {
-            gsap.to(card.querySelector(".detalles-star"), {
-              rotate: 90, scale: 1.1, duration: 1.5, yoyo: true, repeat: -1, ease: "power2.inOut"
+            gsap.to(card.querySelector(".detalles-coal"), {
+              scale: 1.05, duration: 1, yoyo: true, repeat: -1, ease: "sine.inOut"
+            });
+            gsap.to(card.querySelectorAll(".coal-spark"), {
+              y: -8, opacity: 1, duration: 1.2, repeat: -1, stagger: 0.2, ease: "power1.out"
             });
           }
         });
@@ -162,8 +165,8 @@ export default function ProductShowcase() {
             ease: "power2.in",
           });
 
-          gsap.killTweensOf(card.querySelectorAll(".smoke-path, .cocktail-bubble, .cocktail-liquid, .terraza-sun, .detalles-star"));
-          gsap.to(card.querySelectorAll(".smoke-path, .cocktail-bubble, .cocktail-liquid, .terraza-sun, .detalles-star"), {
+          gsap.killTweensOf(card.querySelectorAll(".smoke-path, .cocktail-bubble, .cocktail-liquid, .terraza-sun, .detalles-coal, .coal-spark"));
+          gsap.to(card.querySelectorAll(".smoke-path, .cocktail-bubble, .cocktail-liquid, .terraza-sun, .detalles-coal, .coal-spark"), {
             clearProps: "all"
           });
         });
@@ -231,8 +234,16 @@ export default function ProductShowcase() {
       case "detalles":
         return (
           <div className="relative flex items-center justify-center w-full h-40">
-            <svg className="art-item w-20 h-20 drop-shadow-2xl detalles-star" viewBox="0 0 24 24" fill="none" stroke={accent} strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" style={{ overflow: "visible" }}>
-              <path d="M12 2l2.4 7.6 7.6 2.4-7.6 2.4-2.4 7.6-2.4-7.6-7.6-2.4 7.6-2.4z" fill={`${accent}05`} />
+            <svg className="art-item w-20 h-20 drop-shadow-2xl detalles-coal" viewBox="0 0 24 24" fill="none" stroke={accent} strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" style={{ overflow: "visible" }}>
+              {/* Isometric Coal Cube */}
+              <path d="M12 10 L18 13 L12 16 L6 13 Z" fill={`${accent}1A`} />
+              <path d="M18 13 L18 19 L12 22 L12 16 Z" />
+              <path d="M6 13 L6 19 L12 22 L12 16 Z" />
+              
+              {/* Heat Sparks */}
+              <path className="coal-spark opacity-0" d="M12 7 L12 4" />
+              <path className="coal-spark opacity-0" d="M8 9 L7 6" />
+              <path className="coal-spark opacity-0" d="M16 9 L17 6" />
             </svg>
           </div>
         );
